@@ -1,0 +1,136 @@
+h1,
+h2 {
+  text-align: center;
+}
+
+table {
+  border : 1px solid black;
+  border-collapse: collapse;
+  width: 100%;
+  margin: auto;
+}
+
+thead{
+  font-weight: bold;
+}
+
+td,
+th {
+  border : 1px solid black;
+  padding: 5px;
+  text-align: center;
+}
+
+
+/* 동적으로 생성된 네이버 ah_r class */
+/* 숫자가 들어간 걸 없애줌 */
+[class*="ah_r"] {
+  display: none;
+}
+
+/* rank column */
+.rankcol {
+  width: 50px;
+}
+
+.naver,
+.daum,
+.google{
+  border : 1px solid black;
+  width: 40%;
+  left : 50%;
+  margin: auto;
+  /*display: none;*/
+}
+
+html {
+  background: url(world.png) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+/* pin */
+.pin{
+  width :30px;
+  height: 30px;
+  border-radius :50% 50% 50% 0;
+  background :yellow;
+  position: absolute;
+  transform: rotate(-45deg);
+  margin :-20px 0 0 -20px;
+  left :50%;
+  top :50%;
+  animation-name: bounce;
+  animation-fill-mode: both;
+  animation-duration :1s;
+}
+.pin:after{
+    content :'';
+    width: 14px;
+    height: 14px;
+    margin: 8px 0 0 8px;
+    background: #2F2F2F;
+    position: absolute;
+    border-radius: 50%;
+}
+
+@keyframes bounce{
+  0%{
+    opacity:0;
+    transform: translateY(-2000px) rotate(-45deg);
+  }
+  60%{
+    opacity :1;
+    transform :translateY(30px) rotate(-45deg);
+  }
+  80%{
+    transform: translateY(-10px) rotate(-45deg);
+  }
+  100%{
+    transform: translateY(0) rotate(-45deg);
+  }
+}
+
+
+/* 핀이 꽂히고 난 후의 파동 애니메이션 */
+.pulse {
+  background :rgba(0,0,0,0.2);
+  border-radius: 50%;
+  height :14px;
+  width :14px;
+  position:absolute;
+  left: 50%;
+  top :50%;
+  margin: 11px 0px 0px -12px;
+  transform: rotateX(55deg);
+  z-index :-2;
+}
+.pulse:after{
+  content: "";
+  border-radius: 50%;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  margin: -13px 0 0 -13px;
+  animation : pulsate 1s ease-out;
+  animation-iteration-count: infinite;
+  opacity: 0.0;
+  box-shadow :0 0 1px 2px #89849b;
+  animation-delay :1.1s;
+}
+
+@keyframes pulsate{
+  0%{
+    transform :scale(0.1, 0.1);
+    opacity: 0.0;
+  }
+  50%{
+    opacity: 1.0;
+  }
+  100%{
+    transform :scale(1.2, 1.2);
+    opacity: 0;
+  }
+}
